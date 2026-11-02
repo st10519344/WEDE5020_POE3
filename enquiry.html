@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <title>Custom Order Enquiry | Aura Living Furniture</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header>
+    <div class="nav-container">
+      <div class="logo">
+        <h1>AURA LIVING</h1>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html" class="active">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero" style="padding: 3rem 5%;">
+    <div class="hero-content">
+      <h2>Custom Furniture Enquiry</h2>
+      <p>Submit your specifications for bespoke handcrafted timber designs.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 class="section-title">Request a Detailed Quote</h2>
+    
+    <form id="enquiryForm" method="post">
+      
+      <div class="form-group">
+        <label for="fullName">Full Name *</label>
+        <input type="text" id="fullName" name="fullName" placeholder="e.g. Kelvin Mikiseni" required>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" placeholder="e.g. name@example.com" required>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone / WhatsApp Number *</label>
+        <input type="tel" id="phone" name="phone" placeholder="e.g. +27 82 123 4567" required>
+      </div>
+
+      <div class="form-group">
+        <label for="productCategory">Furniture Category *</label>
+        <select id="productCategory" name="productCategory" required>
+          <option value="">-- Select Category --</option>
+          <option value="dining">Dining Sets & Tables</option>
+          <option value="living">Living Room Furniture</option>
+          <option value="bedroom">Bedroom Units</option>
+          <option value="decor">Home Decor & Accessories</option>
+          <option value="custom">Fully Bespoke / Custom Design</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="timberType">Preferred Timber Finish *</label>
+        <select id="timberType" name="timberType" required>
+          <option value="">-- Select Timber Type --</option>
+          <option value="oak">French Oak</option>
+          <option value="walnut">Reclaimed Walnut</option>
+          <option value="ash">Natural Ash Wood</option>
+          <option value="pine">South African Pine</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="projectDetails">Project Details & Custom Dimensions *</label>
+        <textarea id="projectDetails" name="projectDetails" rows="5" placeholder="Describe your required dimensions, design preferences, or specific room details..." required></textarea>
+      </div>
+
+      <button type="submit" class="btn-primary" style="width: 100%; border: none; cursor: pointer;">Submit Custom Enquiry</button>
+
+    </form>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h3>Aura Living</h3>
+        <p>Crafting sustainable timber furniture for modern living spaces in South Africa.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="enquiry.html">Enquiry Form</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Product Range</h4>
+        <ul>
+          <li><a href="products.html">Dining Sets</a></li>
+          <li><a href="products.html">Living Room</a></li>
+          <li><a href="products.html">Bedroom</a></li>
+          <li><a href="products.html">Custom Quotes</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Showroom Location</h4>
+        <p>12 Green Lane, Brooklyn<br>Pretoria, 0181<br>South Africa</p>
+      </div>
+    </div>
+    <div class="copyright">
+      <p>&copy; 2026 Aura Living Furniture (Pty) Ltd. All rights reserved.</p>
+    </div>
+  </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const form = document.getElementById("enquiryForm");
+    if (!form) return;
+
+    form.addEventListener("submit", function (event) {
+        event.preventDefault(); // Stops the blank page redirect
+
+        const nameInput = document.getElementById("contactName") || document.querySelector("input[type='text']");
+        const emailInput = document.querySelector("input[type='email']");
+
+        // Automatically create error box if missing
+        let errorDiv = document.getElementById("errorMessages");
+        if (!errorDiv) {
+            errorDiv = document.createElement("div");
+            errorDiv.id = "errorMessages";
+            errorDiv.style.margin = "10px 0";
+            errorDiv.style.fontWeight = "bold";
+            form.insertBefore(errorDiv, form.firstChild);
+        }
+
+        let errors = [];
+
+        if (nameInput && nameInput.value.trim().length < 2) {
+            errors.push("Please enter a valid name (at least 2 characters).");
+        }
+
+        if (emailInput && (!emailInput.value.includes("@") || !emailInput.value.includes("."))) {
+            errors.push("Please enter a valid email address.");
+        }
+
+        if (errors.length > 0) {
+            errorDiv.style.color = "red";
+            errorDiv.innerHTML = errors.join("<br>");
+        } else {
+            errorDiv.style.color = "green";
+            errorDiv.innerHTML = "Success! Your message has been validated.";
+            form.reset();
+        }
+    });
+});
+</script>
+
+<script>
+
+</body>
+</html>
+
+
+ 

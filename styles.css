@@ -1,0 +1,361 @@
+/* ==========================================================================
+   AURA LIVING FURNITURE - GLOBAL STYLESHEET (WEDE5020 Part 2)
+   ========================================================================== */
+
+/* 1. CSS VARIABLES (Color Palette & Typography) */
+:root {
+  --primary-color: #1E3A2B;    /* Deep Forest Green */
+  --accent-color: #C88A4B;     /* Warm Amber / Oak */
+  --bg-color: #F9F8F6;         /* Off-White Background */
+  --text-dark: #2C2C2C;        /* Charcoal Dark Text */
+  --text-light: #FFFFFF;       /* White Text */
+  --border-color: #E2DDD5;     /* Soft Neutral Border */
+  --font-family: 'Aptos', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --transition-speed: 0.3s ease;
+}
+
+/* 2. GLOBAL RESET & BASE STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-family);
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--bg-color);
+  color: var(--text-dark);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: color var(--transition-speed);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 3. HEADER & NAVIGATION */
+header {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 1rem 5%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo h1 {
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+  color: var(--accent-color);
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--text-light);
+  font-weight: 500;
+  padding: 0.5rem 0;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+}
+
+/* 4. HERO SECTION */
+.hero {
+  background: linear-gradient(rgba(30, 58, 43, 0.7), rgba(30, 58, 43, 0.7)), url('../images/hero.jpg') center/cover no-repeat;
+  color: var(--text-light);
+  padding: 6rem 5%;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero h2 {
+  font-size: 2.8rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+/* 5. BUTTONS & CALL-TO-ACTION */
+.btn-primary {
+  display: inline-block;
+  background-color: var(--accent-color);
+  color: var(--text-light);
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-weight: 600;
+  transition: background-color var(--transition-speed);
+}
+
+.btn-primary:hover {
+  background-color: #b0743a;
+}
+
+/* 6. CONTENT SECTIONS & GRID LAYOUTS */
+.section {
+  padding: 4rem 5%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--primary-color);
+  margin-bottom: 2.5rem;
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.card {
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  padding: 1.5rem;
+  text-align: center;
+  transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* 7. FORMS (Enquiry & Contact Pages) */
+form {
+  background-color: #FFFFFF;
+  padding: 2rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 0.8rem;
+  border: 1px solid var(--border-color);
+  border-radius: 4px;
+  font-family: var(--font-family);
+  font-size: 1rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+/* 8. FOOTER */
+footer {
+  background-color: var(--primary-color);
+  color: var(--text-light);
+  padding: 3rem 5% 1rem 5%;
+  margin-top: 4rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto 2rem auto;
+}
+
+.footer-col h3, .footer-col h4 {
+  color: var(--accent-color);
+  margin-bottom: 1rem;
+}
+
+.footer-col ul {
+  list-style: none;
+}
+
+.footer-col li {
+  margin-bottom: 0.5rem;
+}
+
+.copyright {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  padding-top: 1.5rem;
+  font-size: 0.9rem;
+}
+
+/* 9. RESPONSIVE DESIGN (MEDIA QUERIES) */
+
+/* Tablet View (Max Width: 768px) */
+@media (max-width: 768px) {
+  .grid-3 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile View (Max Width: 480px) */
+@media (max-width: 480px) {
+  .nav-container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  nav ul {
+    gap: 1rem;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* PRODUCT GALLERY IMAGES */
+.product-img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.price {
+  display: block;
+  font-weight: 700;
+  color: var(--accent-gold);
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+/* ==========================================================================
+   HOVER EFFECTS & ANIMATIONS
+   ========================================================================== */
+
+/* 1. Paragraph Text Zoom Effect (Microscope/Magnifier) */
+main p {
+  transition: transform 0.3s ease, color 0.3s ease;
+  transform-origin: left center;
+  cursor: pointer;
+}
+
+main p:hover {
+  transform: scale(1.03); /* Subtle zoom in on the text */
+  color: #000000;         /* Darkens text for better focus */
+}
+
+/* 2. Interactive Product Image Animations */
+.product-img {
+  transition: transform 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+/* Image Zoom & Lift on Hover */
+.card:hover .product-img,
+.product-img:hover {
+  transform: scale(1.06) rotate(1deg); /* Zooms image slightly and adds a gentle tilt */
+  filter: brightness(1.05);             /* Enhances image brightness slightly */
+}
+
+/* ==========================================================================
+   FOOTER & SOCIAL MEDIA ICONS
+   ========================================================================== */
+
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: var(--primary-dark);
+  color: var(--bg-light);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 1rem;
+}
+
+.social-links a {
+  color: var(--bg-light);
+  font-size: 1.2rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Social Icon Hover Animation */
+.social-links a:hover {
+  background-color: var(--accent-gold);
+  color: var(--primary-dark);
+  transform: translateY(-4px) scale(1.1);
+}
+
+
